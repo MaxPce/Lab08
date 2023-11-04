@@ -1,0 +1,39 @@
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td>{{ producto.codigo }}</td>
+        <td>{{ producto.descripcion }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>
+          <button (click)="editarProducto(producto)" class="btn btn-primary">Editar</button>
+          <button (click)="borrarProducto(producto.codigo)" class="btn btn-danger">Borrar</button>
+        </td>
+      </tr>
+    </tbody>
+</table>
+  
+<form (submit)="guardarProducto()">
+    <div class="form-group">
+      <label for="codigo">Código</label>
+      <input type="text" class="form-control" id="codigo" [(ngModel)]="producto.codigo" name="codigo" required>
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripción</label>
+      <input type="text" class="form-control" id="descripcion" [(ngModel)]="producto.descripcion" name="descripcion" required>
+    </div>
+    <div class="form-group">
+      <label for="precio">Precio</label>
+      <input type="number" class="form-control" id="precio" [(ngModel)]="producto.precio" name="precio" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+  

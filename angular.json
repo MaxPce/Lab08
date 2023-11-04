@@ -25,9 +25,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/luna_admin-v1.1/styles/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/luna_admin-v1.1/scripts/luna.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +97,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f2d28f4a-06d8-4158-a690-6bf931270c01"
   }
 }
